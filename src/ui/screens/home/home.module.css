@@ -11,6 +11,13 @@
     height: auto;
 }
 
+@media screen and (max-width: 650px) {
+    .r{
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+    }
+}
+
 .banner h1{
     font-weight: 700;
     color: #FFFFFF;
@@ -63,6 +70,19 @@
     padding-right: 8rem;
 }
 
+@media screen and (max-width: 650px) {
+    .about{
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+    }
+    div.right_about {
+        padding-right: calc(var(--bs-gutter-x) * .5) !important;
+        margin-bottom: 1rem;
+    }
+    div.left_about{
+        padding-left: calc(var(--bs-gutter-x) * .5) !important;
+    }
+}
 
 
 .right_about{
@@ -115,6 +135,13 @@
 .cards{
     padding-left: 8rem;
     padding-right: 8rem;
+}
+
+@media screen and (max-width: 650px) {
+    .cards{
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
 }
 
 .cards > div {
@@ -188,6 +215,13 @@ span.details_num {
     margin-right: 8rem;
     transform: translateY(8rem);
     padding: 3rem;
+}
+
+@media screen and (max-width: 650px) {
+    .item_donated_card{
+        margin-left: 1.5rem !important;
+        margin-right: 1.5rem !important;
+    }
 }
 
 .item_donated_card > h1{
@@ -278,12 +312,16 @@ span.details_num {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .volunteer{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 .volunteer h3{
     color: #6f86d6;
@@ -301,8 +339,14 @@ span.details_num {
     width: 50%;
     background-color: #fafafa;
     margin: 0 auto;
-    border-radius: 10%;
+    border-radius: 25px;
     padding: 2rem;
+}
+
+@media screen and (max-width: 940px) {
+    .fed_form{
+        width: 80% !important;
+    }
 }
 
 .fed_form h4{

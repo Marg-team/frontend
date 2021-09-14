@@ -52,7 +52,7 @@ export default function Home() {
                 <Row className={styles.cards}>
                     {
                         l.map((e)=>{
-                            return <Col lg={3} md={6} key={e}>
+                            return <Col lg={3} md={6} sm={6} xs={6} key={e}>
                                 <Card>
                                     <Card.Img src={boat}/>
                                     <Card.Text>
@@ -102,7 +102,7 @@ export default function Home() {
                         <Row>
                             {   
                                 [1,2,3].map((e)=>{
-                                    return <Col lg={4} md={4}>
+                                    return <Col lg={4} md={4} sm={6} xs={6}>
                                         <Card className={styles.donated_card}>
                                             <Card.Img src={boat}/>
                                             <Card.Text>

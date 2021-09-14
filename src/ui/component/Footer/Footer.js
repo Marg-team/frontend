@@ -1,11 +1,10 @@
 import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 import * as styles from './Footer.module.css'
 
 export default function Footer() {
     return (
         <footer className={styles.footer}>
-            <Container>
                 <Row>
                     <Col lg={6} md={6} className={styles.content}>
                     <h3 className={styles.logo}>AASHROY</h3>
@@ -28,7 +27,6 @@ export default function Footer() {
                         <p>xyz@gmail.com</p>
                     </Col>
                 </Row>
-            </Container>
         </footer>
     )
 }
