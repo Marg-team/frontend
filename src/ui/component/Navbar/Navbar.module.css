@@ -1,0 +1,58 @@
+.navbar{
+    height: 100px;
+    padding-left: 58px;
+    padding-right: 58px;
+}
+
+.navbar a{
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+    font-weight: 700;
+    font-size: 14px;
+    color: #333333 !important;
+}
+
+.navcollapse{
+    justify-content: center;
+    z-index: 1;
+}
+
+
+.login_button{
+  margin-right:  3rem;
+  width: 7rem;
+  border-radius: 30px;
+  background-color: blue;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  height: 2.5rem;
+}
+
+.logo{
+    font-weight: bold;
+    font-size: 24px !important;
+}
+
+@media screen and (max-width: 700px) {
+    .navbar{
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .navcollapse{
+        background: rgb(248, 249, 250);
+        border-radius: 10px;
+        box-shadow: rgb(0 0 0 / 5%) 1px 4px 3px 0px;
+        transform: translateY(10px);
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}
+
+a.active{
+    color: rgb(51, 97, 224) !important;
+}
