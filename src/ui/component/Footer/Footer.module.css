@@ -1,0 +1,30 @@
+.footer {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    background-color: black;
+    color: #ffffff;
+}
+
+.content{
+    margin-bottom: 1rem;
+}
+
+.footer h3{
+    text-align: left;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding-bottom: 2rem;
+    font-size: 18px;
+}
+
+.logo{
+    font-size: 36px !important;
+}
+
+.footer p{
+    font-size: 14px;
+}
+
+.para{
+    width: 67%;
+}
