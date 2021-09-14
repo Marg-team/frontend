@@ -17,7 +17,7 @@ export default function Home() {
                         <p>Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad,nam no suscipit quaerendum.</p>
                         <button type="button" className={styles.login_button_home}>GET STARTED</button>
                     </Col>
-                    <Col className={styles.banner_img}>
+                    <Col className={`${styles.banner_img} d-none d-md-block`}>
                         <img src={logo} height={300} alt='banner'/>
                     </Col>
                 </Row>
@@ -27,7 +27,7 @@ export default function Home() {
 
         <section>
             <Row className={styles.about}>
-                <Col className={styles.right_about}>
+                <Col sm={12} md={6} className={styles.right_about}>
                     <img className={styles.about_img} src={boat} alt=""/>
                 </Col>
                 <Col className={styles.left_about}>
@@ -83,15 +83,17 @@ export default function Home() {
 
         <section>
             <div className={styles.donation}>
-                <svg width="1500" height="569" viewBox="0 0 1500 569" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1552.57 0H-42.4331V569H-5.29881L-13.4331 532.52C-13.4331 532.52 154.837 584.278 500.232 464.179C746.436 378.57 929.987 411.944 1115.28 445.635C1189.94 459.209 1264.87 472.835 1344.31 478.751C1445.61 486.297 1510.72 486.361 1552.57 483.411V0Z" fill="url(#paint0_linear)"/>
-                    <defs>
-                        <linearGradient id="paint0_linear" x1="816.25" y1="-89.5648" x2="827.712" y2="919.298" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#6A9AE7"/>
-                            <stop offset="1" stop-color="#281BC8"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
+                <div className={styles.svg}>
+                    <svg width="1500" height="569" viewBox="0 0 1500 569" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1552.57 0H-42.4331V569H-5.29881L-13.4331 532.52C-13.4331 532.52 154.837 584.278 500.232 464.179C746.436 378.57 929.987 411.944 1115.28 445.635C1189.94 459.209 1264.87 472.835 1344.31 478.751C1445.61 486.297 1510.72 486.361 1552.57 483.411V0Z" fill="url(#paint0_linear)"/>
+                        <defs>
+                            <linearGradient id="paint0_linear" x1="816.25" y1="-89.5648" x2="827.712" y2="919.298" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#6A9AE7"/>
+                                <stop offset="1" stop-color="#281BC8"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
 
                 <Col>
                     <div className={styles.item_donated_card}>
@@ -100,7 +102,7 @@ export default function Home() {
                         <Row>
                             {   
                                 [1,2,3].map((e)=>{
-                                    return <Col lg={4} md={6}>
+                                    return <Col lg={4} md={4}>
                                         <Card className={styles.donated_card}>
                                             <Card.Img src={boat}/>
                                             <Card.Text>

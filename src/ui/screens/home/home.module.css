@@ -164,13 +164,21 @@ span.details_num {
     border-radius: 20px;
 }
 
-.donation svg{
-    position: absolute;
-}
-
 .donation{
     margin-bottom: 16rem;
 }
+
+.donation .svg{
+    width: 100vw;
+    width: 100vw;
+    overflow-x: hidden;
+    position: absolute;
+}
+
+.donation_gap{
+    height: 0px;
+}
+
 
 .item_donated_card{
     background-color: #FFFFFF;
