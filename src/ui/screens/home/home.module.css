@@ -41,6 +41,19 @@
   left: 0;
 }
 
+svg{
+    width: 100vw;
+    height: auto;
+}
+
+svg.up{
+    transform: translateY(-1px) !important;
+}
+
+svg.down{
+    transform: translateY(1px) !important;
+}
+
 @media screen and (max-width: 600px) {
     .banner{
         height:unset !important;
@@ -70,7 +83,7 @@
     padding-right: 8rem;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 768px) {
     .about{
         padding-left: 2rem !important;
         padding-right: 2rem !important;
