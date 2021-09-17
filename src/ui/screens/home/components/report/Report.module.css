@@ -17,16 +17,17 @@ svg.down{
     position: relative;
 }
 
-.report h3, .report h1{
+.report h3, .report h1, .report h2{
     text-align: center;
     font-weight: bold;
     color: #FFFFFF;
 }
 
-.report h1{
-    color: #FFFFFF;
-    font-size: 65px
+.report h2{
+    margin-top: 3rem;
+    font-size: 45px;
 }
+
 
 
 .report p{
