@@ -2,9 +2,13 @@ import React from 'react'
 import { Nav, Navbar } from 'react-bootstrap';
 import * as styles from './Navbar.module.css'
 import MediaQuery from 'react-responsive'
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useHistory } from 'react-router-dom';
 
 export default function Navigation() {
+    const history = useHistory();
+    const buttonClickHandler = () => {
+        history.push('/login/');
+    }
     return (
         <section>
             <Navbar bg="light" expand="xl" className={styles.navbar} fixed="top">
@@ -23,7 +27,7 @@ export default function Navigation() {
                 </Nav>
                 </Navbar.Collapse>
                 <MediaQuery minWidth={1200}>
-                    <button type="button" className={styles.login_button}>LOGIN</button>
+                    <button type="button" onClick={buttonClickHandler} className={styles.login_button}>LOGIN</button>
                 </MediaQuery>
             </Navbar>
         </section>
