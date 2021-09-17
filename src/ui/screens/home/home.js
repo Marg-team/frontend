@@ -8,8 +8,13 @@ import TopDonor from './components/topDonor/TopDonor'
 import Report from './components/report/Report'
 import Volunteer from './components/volunteer/Volunteer'
 import Feedback from './components/feedback/Feedback'
+import { useLocation } from 'react-router'
 
 export default function Home() {
+    const location = useLocation();
+    if(location.state.scrolltop){
+        window.scrollTo(0,0)
+    }
     return (
         <>
             <HomeBanner/>
