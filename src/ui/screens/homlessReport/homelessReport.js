@@ -1,7 +1,9 @@
-import React, {useEffect} from 'react'
+import React, {Suspense, useEffect} from 'react'
 import * as styles from './homelessReport.module.css'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import ChoiceBtn from './components/choiceBtn/ChoiceBtn'
+import MyselfReport from './components/myselfReport/MyselfReport'
+import OtherReport from './components/otherReport/OtherReport'
 
 export default function HomelessReport() {
     useEffect(() => {
@@ -24,14 +26,23 @@ export default function HomelessReport() {
                 <div className={styles.content}>
                     <h1>Report us about any homeless people you see near you.</h1>
                     <div className={styles.card}>
-                        <h3>This is the report for</h3>
-                        <Router>
-                            <Switch>
-                                <Route path={`/report/`} exact>
-                                    <ChoiceBtn/>
-                                </Route>
-                            </Switch>
-                        </Router>
+                        <Switch>
+                            <Route path={`/report/myself/`}>
+                                <h3>This is the report for myself</h3>
+                                <div className={styles.line}></div>
+                                <MyselfReport/>
+                            </Route>
+                            <Route path={`/report/other/`}>
+                                <h3>This is the report for other</h3>
+                                <div className={styles.line}></div>
+                                <OtherReport/>
+                            </Route>
+                            <Suspense >
+                                <h3>This is the report for</h3>
+                                <div className={styles.line}></div>
+                                <ChoiceBtn/>
+                            </Suspense>
+                        </Switch>
                     </div>
                 </div>
             </div>

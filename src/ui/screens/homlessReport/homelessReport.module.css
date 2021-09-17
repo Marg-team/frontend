@@ -45,6 +45,15 @@
     color: #3532CE;
     font-weight: bold;
     font-size: 21px;
-    margin-bottom: 2rem;
 }
 
+
+.line{
+    height: 8px;
+    width: 80px;
+    background: red;
+    left: 10px;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    margin-top: 12px;
+}
