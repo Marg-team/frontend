@@ -31,15 +31,15 @@ export default function TopDonor() {
         <section>
             <div className={styles.donor}>
                 <h2>TOP DONATOR'S</h2>
-                <div class={styles.line}></div>
+                <div className={styles.line}></div>
                 <Container>
                     <Row>
                         {
-                            topDonor.map((e)=>{
-                                return <Col lg={4} md={4}>
+                            topDonor.map((e,i)=>{
+                                return <Col lg={4} md={4} key={i}>
                                     <Card className={styles.donor_card}>
                                         <Card.Img src={e.img||boat} alt={e.name}/>
-                                        <Card.Text>
+                                        <Card.Text as="span">
                                             <h4>{e.name}</h4>
                                             <p>{e.deg}</p>
                                             <p>{e.desc}</p>

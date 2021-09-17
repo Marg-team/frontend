@@ -1,17 +1,28 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { Nav, Navbar } from 'react-bootstrap';
 import * as styles from './Navbar.module.css'
 import MediaQuery from 'react-responsive'
-import { Link, NavLink, useHistory } from 'react-router-dom';
+import { Link, NavLink, useHistory, useLocation } from 'react-router-dom';
 
 export default function Navigation() {
     const history = useHistory();
+    const location = useLocation();
     const buttonClickHandler = () => {
         history.push('/login/');
     }
+    const [isDark, setDark] = useState(false)
+
+    useEffect(() => {
+        if(location.pathname==="/complain/"){
+            setDark(true);
+        }else{
+            setDark(false);
+        }
+    }, [location])
+
     return (
         <section>
-            <Navbar bg="light" expand="xl" className={styles.navbar} fixed="top">
+            <Navbar bg={"light"} expand="xl" className={styles.navbar} fixed="top">
                 <Navbar.Brand as={Link} to={`/`} className={styles.logo}>AASHROY</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className={styles.navcollapse}>

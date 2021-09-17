@@ -15,7 +15,7 @@ export default function OtherReport() {
             <input type="text" placeholder="Details About The Victim"/>
             <input type="file" ref={inputFileRef} id="files" hidden={true}/>
             <span className={styles.label}>Proof</span>
-            <label className={styles.file} for="files">
+            <label className={styles.file} htmlFor="files">
                 <span>Drop File here</span>
                 <span>or</span>
                 <button onClick={onFileClick}>Select File</button>

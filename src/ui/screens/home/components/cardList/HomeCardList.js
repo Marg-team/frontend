@@ -39,7 +39,7 @@ export default function HomeCardList() {
                 <Row className={styles.cards}>
                     {
                         cards.map((e)=>{
-                            return <Col lg={3} md={6} sm={6} xs={6} key={e}>
+                            return <Col lg={3} md={6} sm={6} xs={6} key={e.name}>
                                 <Card>
                                     <Card.Img style={{padding: 22}} src={e.img}/>
                                     <Card.Text>
