@@ -1,5 +1,5 @@
 import React from 'react'
-import GreButton from '../../../../components/Button/GreButton'
+import GreButton from '../../../../components/Button/GreButton/GreButton'
 import * as styles from './Feedback.module.css'
 
 export default function Feedback() {

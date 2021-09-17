@@ -1,6 +1,7 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import logo from '../../../../assets/images/boat2.jpg' 
+import LightButton from '../../../../components/Button/LightButton/LightButton'
 import * as styles from './HomeBanner.module.css'
 
 export default function HomeBanner() {
@@ -11,7 +12,7 @@ export default function HomeBanner() {
                     <Col>
                         <h1>We connect NGO's to help Homeless people near us</h1>
                         <p>Come join and help us to help people in need connect with the world and make their lives jubilant</p>
-                        <button type="button" className={styles.login_button_home}>GET STARTED</button>
+                        <LightButton>GET STARTED</LightButton>
                     </Col>
                     <Col className={`${styles.banner_img} d-none d-md-block`}>
                         <img src={logo} height={300} alt='banner'/>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import * as styles from './HomeAbout.module.css'
 import boat from '../../../../assets/images/1boat.jpg'
-import GreButton from '../../../../components/Button/GreButton'
+import GreButton from '../../../../components/Button/GreButton/GreButton'
 
 export default function HomeAbout() {
     return (
