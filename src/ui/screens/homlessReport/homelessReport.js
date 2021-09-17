@@ -1,7 +1,8 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import * as styles from './homelessReport.module.css'
-import { Link } from 'react-router-dom'
+import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import ChoiceBtn from './components/choiceBtn/ChoiceBtn'
 
 export default function HomelessReport() {
     return (
@@ -22,20 +23,13 @@ export default function HomelessReport() {
                     <h1>Report us about any homeless people you see near you.</h1>
                     <div className={styles.card}>
                         <h3>This is the report for</h3>
-                        <Container>
-                            <Row>
-                                <Col>   
-                                    <Link to={`/report/myself/`} className={`${styles.choice_btn} ${styles.ml_auto}`}>
-                                        Myself
-                                    </Link>
-                                </Col>
-                                <Col>   
-                                    <Link to={`/report/other/`} className={styles.choice_btn}>
-                                        Others
-                                    </Link>
-                                </Col>
-                            </Row>
-                        </Container>
+                        <Router>
+                            <Switch>
+                                <Route path={`/report/`} exact>
+                                    <ChoiceBtn/>
+                                </Route>
+                            </Switch>
+                        </Router>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,72 @@
+svg{
+    width: 100vw;
+    height: auto;
+}
+
+svg.up{
+    transform: translateY(-1px) !important;
+}
+
+svg.down{
+    transform: translateY(1px) !important;
+}
+
+
+.line{
+    height: 8px;
+    width: 80px;
+    background: red;
+    left: 10px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    margin-top: 12px;
+}
+
+
+.donation{
+    margin-bottom: 16rem;
+}
+
+.donation .svg{
+    width: 100vw;
+    width: 100vw;
+    overflow: hidden;
+    position: absolute;
+}
+
+.donation_gap{
+    height: 0px;
+}
+
+
+.item_donated_card{
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.1);
+    margin-left: 8rem;
+    margin-right: 8rem;
+    transform: translateY(8rem);
+    padding: 3rem;
+}
+
+@media screen and (max-width: 650px) {
+    .item_donated_card{
+        margin-left: 1.5rem !important;
+        margin-right: 1.5rem !important;
+    }
+}
+
+.item_donated_card > h1{
+    margin-bottom: 1.5rem;
+}
+
+.num_donated_sub{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    transform: translateY(-2px);
+}
+
+.donated_card{
+    margin-bottom: 1.5rem;
+}

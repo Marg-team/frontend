@@ -1,0 +1,80 @@
+.banner{
+    background-image: linear-gradient(to bottom, #7BBBEE 0%, #281AC8 100%);
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    margin-top: 6rem;
+}
+
+.banner h1{
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.banner p{
+    margin-top: 33px;
+    color: #FFFFFF;
+}
+
+.banner_img{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.banner svg{
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .banner{
+        height:unset !important;
+    }
+}
+
+.login_button_home{
+    margin-top: 8px;
+    margin-right:  3rem;
+    width: 10rem;
+    border-radius: 30px;
+    background-color: white;
+    border: none;
+    color: #6f86d6;
+    text-align: center;
+    font-size: 16px;
+    height: 3.5rem;
+    font-weight: 700;
+}
+
+
+.r{
+    padding: 8rem;
+    height: auto;
+}
+
+@media screen and (max-width: 650px) {
+    .r{
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+    }
+}
+
+
+
+svg{
+    width: 100vw;
+    height: auto;
+}
+
+svg.up{
+    transform: translateY(-1px) !important;
+}
+
+svg.down{
+    transform: translateY(1px) !important;
+}
+
+

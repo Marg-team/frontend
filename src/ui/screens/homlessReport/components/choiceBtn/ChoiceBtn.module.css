@@ -1,0 +1,25 @@
+.choice_btn{
+    border-radius: 15px;
+    border: rgba(53, 50, 206, 1) solid;
+    border-width: 0.5px;
+    height: 20vw;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: rgb(66, 66, 66);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 300ms;
+}
+
+.choice_btn:hover{
+    transform: scale(0.95);
+    background-color: #4a5cd7ba;
+    color: #f8f8f8;
+}
+
+.ml_auto{
+    margin-left: auto;
+}

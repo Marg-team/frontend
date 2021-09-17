@@ -1,0 +1,74 @@
+svg{
+    width: 100vw;
+    height: auto;
+}
+
+svg.up{
+    transform: translateY(-1px) !important;
+}
+
+svg.down{
+    transform: translateY(1px) !important;
+}
+
+.login_button_gre{
+    font-weight: bold;
+    width: 10rem;
+    border-radius: 30px;
+    background-image: linear-gradient(to bottom, #7BBBEE 0%, #281AC8 100%);
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    height: 3.5rem;
+}
+
+.feedback{
+    background-image: linear-gradient(to bottom, #7BBBEE 0%, #281AC8 100%);
+    padding-bottom: 4rem;
+}
+
+.fed_form{
+    width: 50%;
+    background-color: #fafafa;
+    margin: 0 auto;
+    border-radius: 25px;
+    padding: 2rem;
+}
+
+@media screen and (max-width: 940px) {
+    .fed_form{
+        width: 80% !important;
+    }
+}
+
+.fed_form h4{
+    text-align: center;
+    color: #6f86d6;
+    font-weight: bold;
+}
+
+.fed_form p{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.fed_form input{
+    height: 4rem;
+    margin-bottom: 1rem;
+}
+
+.inner{
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+
+.inner form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inner button{
+    margin-top: 1rem;
+}

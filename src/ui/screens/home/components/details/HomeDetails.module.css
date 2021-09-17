@@ -1,0 +1,48 @@
+.login_button_gre{
+    font-weight: bold;
+    width: 10rem;
+    border-radius: 30px;
+    background-image: linear-gradient(to bottom, #7BBBEE 0%, #281AC8 100%);
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    height: 3.5rem;
+}
+
+.details{
+    display: flex;
+}
+
+.details > div {
+    margin-left: 20vw;
+    margin-right: 10vw;
+    margin-bottom: 4rem;
+}
+
+.details p {
+    width: 80%;
+    display: block;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 40px;
+    color: #333333;
+}
+
+span.details_num {
+    position: relative;
+    color: #FF96AD !important;
+    font-size: 75px !important
+}
+
+.details_num::after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    bottom: -4px; 
+    height: 8px;
+    width: 80px;
+    background-color: #FF96AD;    left: 10px;
+    border-radius: 20px;
+}
