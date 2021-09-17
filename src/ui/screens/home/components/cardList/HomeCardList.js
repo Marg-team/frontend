@@ -5,18 +5,40 @@ import boat from '../../../../assets/images/1boat.jpg'
 import * as styles from './HomeCardList.module.css'
 
 export default function HomeCardList() {
+    const cards = [
+        {
+            url: '/report/',
+            img: boat,
+            name: 'report'
+        },
+        {
+            url: '/complain/',
+            img: boat,
+            name: 'complain'
+        },
+        {
+            url: '/donate/',
+            img: boat,
+            name: 'donate'
+        },
+        {
+            url: '/about',
+            img: boat,
+            name: 'about us'
+        },
+    ];
     return (
         <section>
             <div className={styles.cards_list}>
                 <svg className={styles.up} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f8f9fa" fillOpacity="1" d="M0,64L60,96C120,128,240,192,360,186.7C480,181,600,107,720,90.7C840,75,960,117,1080,138.7C1200,160,1320,160,1380,160L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
                 <Row className={styles.cards}>
                     {
-                        [1,2,3,4].map((e)=>{
+                        cards.map((e)=>{
                             return <Col lg={3} md={6} sm={6} xs={6} key={e}>
                                 <Card>
-                                    <Card.Img src={boat}/>
+                                    <Card.Img src={e.img}/>
                                     <Card.Text>
-                                        <Link to="#" className={`btn btn-primary d-grid ${styles.card_btn}`}>REPORT</Link>
+                                        <Link to={e.url} className={`btn btn-primary d-grid ${styles.card_btn}`}>{e.name.toUpperCase()}</Link>
                                     </Card.Text>
                                 </Card>
                             </Col>

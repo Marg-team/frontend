@@ -4,6 +4,20 @@ import * as styles from './Donation.module.css';
 import boat from '../../../../assets/images/1boat.jpg'
 
 export default function Donation() {
+    const donation = [
+        {
+            qty: 35,
+            type: "Clothes"
+        },
+        {
+            qty: 46,
+            type: "Food"
+        },
+        {
+            qty: 64,
+            type: "Medicine"
+        },
+    ]
     return (
         <section>
             <div className={styles.donation}>
@@ -25,13 +39,13 @@ export default function Donation() {
                         <div class="line"></div>
                         <Row>
                             {   
-                                [1,2,3].map((e)=>{
+                                donation.map((e)=>{
                                     return <Col lg={4} md={4} sm={6} xs={6}>
                                         <Card className={styles.donated_card}>
                                             <Card.Img src={boat}/>
                                             <Card.Text>
                                                 <hr/>
-                                                <h3 className={styles.num_donated_sub}>40 Clothes</h3>
+                                                <h3 className={styles.num_donated_sub}>{e.qty} {e.type}</h3>
                                             </Card.Text>
                                         </Card>
                                     </Col>

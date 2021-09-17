@@ -1,8 +1,14 @@
 import React from 'react'
+import { useHistory } from 'react-router';
 import GreButton from '../../../../components/Button/GreButton/GreButton'
 import * as styles from './HomeDetails.module.css'
 
 export default function HomeDetails() {
+    const history = useHistory();
+    const buttonClickHandler = () => {
+        history.push('/public-data/')
+    }
+
     return (
         <section className={styles.details}>
             <div>
@@ -13,7 +19,7 @@ export default function HomeDetails() {
                         home maids and many more. Through us, you can help them like all those we have connected with a NGO
                     </p>
                 </div>
-                <GreButton>More Details</GreButton>
+                <GreButton onClick={buttonClickHandler}>More Details</GreButton>
             </div>
         </section>
     )

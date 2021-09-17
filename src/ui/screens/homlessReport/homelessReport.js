@@ -1,10 +1,12 @@
-import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import React, {useEffect} from 'react'
 import * as styles from './homelessReport.module.css'
-import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import ChoiceBtn from './components/choiceBtn/ChoiceBtn'
 
 export default function HomelessReport() {
+    useEffect(() => {
+        window.scrollTo(0,0);
+    }, [])
     return (
         <section>
             <div className={styles.report}>
