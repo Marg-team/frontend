@@ -9,10 +9,9 @@ export default function HomeDetails() {
                 <span className={styles.details_num}>256 </span>
                 <span style={{color:"#2940D3",  fontSize:"50px", fontWeight:"bold"}}> People got Help from NGO’s</span>
                 <div className="p_width">
-                    <p>Richard McClintock, a Latin scholar from Hampden Sydney College,
-                    is credited with discovering the source behind the ubiquitous filler
-                    text. In seeing a sample of lorem ipsum, his interest was piqued by
-                    consectetur a genuine, albeit rare, Latin word. Consulting a Latin </p>
+                    <p>With the adverse effects of COVID-19 in everyone's lives, especially those who are working low wage job, 
+                        home maids and many more. Through us, you can help them like all those we have connected with a NGO
+                    </p>
                 </div>
                 <GreButton>More Details</GreButton>
             </div>

@@ -10,7 +10,7 @@ export default function HomeBanner() {
                 <Row className={styles.r}>
                     <Col>
                         <h1>We connect NGO's to help Homeless people near us</h1>
-                        <p>Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad,nam no suscipit quaerendum.</p>
+                        <p>Come join and help us to help people in need connect with the world and make their lives jubilant</p>
                         <button type="button" className={styles.login_button_home}>GET STARTED</button>
                     </Col>
                     <Col className={`${styles.banner_img} d-none d-md-block`}>

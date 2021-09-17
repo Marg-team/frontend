@@ -10,7 +10,7 @@ export default function Volunteer() {
 
                 <div className={styles.line}></div>
                 <p>Want to help the community? Become a </p>
-                <p>Want to help the community? Become a</p>
+                <p>volunteer here and take the responsibility.</p>
                 <GreButton>Apply here</GreButton>
             </div>
         </section>

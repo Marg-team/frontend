@@ -9,7 +9,8 @@ export default function Footer() {
                     <Col lg={6} md={6} className={styles.content}>
                     <h3 className={styles.logo}>AASHROY</h3>
                     <div className={styles.para}>
-                        <p>usce ut elit aliquet, fermentum leo vel, tempus nunc. Fusce eu rhoncus augue. Fusce vel metus pharetra, fermentum</p>
+                        <p>AASHROY aims to find all who are devold of a home or basic needs in life. We will help and associate them with the nearest and renowened NGO 
+                        which will help to make their life cheerful. By working together we can ensure that no person will stay hungry and without home.</p>
                     </div>
                     <i class="contact_icon fab fa-google-plus-g"></i><i class="contact_icon fab fa-facebook-square"></i><i class="contact_icon fab fa-twitter-square"></i><i class="contact_icon fab fa-instagram-square"></i>
                     </Col>
