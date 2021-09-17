@@ -2,6 +2,7 @@ import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import * as styles from './HomeAbout.module.css'
 import boat from '../../../../assets/images/1boat.jpg'
+import GreButton from '../../../../components/Button/GreButton'
 
 export default function HomeAbout() {
     return (
@@ -21,7 +22,7 @@ export default function HomeAbout() {
                         was piqued by consectetur a genuine, albeit rare, Latin word.
                         Consulting a Latin dictionary led McClintock to a passage from .
                     </p>
-                    <button type="button" className={styles.login_button_gre}>LOGIN</button>
+                    <GreButton>LOGIN</GreButton>
                 </Col>
             </Row>
         </section>

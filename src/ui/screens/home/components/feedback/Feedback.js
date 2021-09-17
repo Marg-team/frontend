@@ -1,4 +1,5 @@
 import React from 'react'
+import GreButton from '../../../../components/Button/GreButton'
 import * as styles from './Feedback.module.css'
 
 export default function Feedback() {
@@ -21,7 +22,7 @@ export default function Feedback() {
                                 <input class="form-control height " type="text" name="postTitle" placeholder="Email"/>
                                 <textarea class="form-control widths" name="postBody" rows="8" cols="30" placeholder="Type here"></textarea>
                             </div>
-                            <button type="button" className={styles.login_button_gre}>SEND</button>
+                            <GreButton>SEND</GreButton>
                         </form>
                     </div>
                 </div>

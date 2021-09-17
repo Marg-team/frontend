@@ -1,4 +1,5 @@
 import React from 'react'
+import GreButton from '../../../../components/Button/GreButton'
 import * as styles from './HomeDetails.module.css'
 
 export default function HomeDetails() {
@@ -13,7 +14,7 @@ export default function HomeDetails() {
                     text. In seeing a sample of lorem ipsum, his interest was piqued by
                     consectetur a genuine, albeit rare, Latin word. Consulting a Latin </p>
                 </div>
-                <button type="button" className={styles.login_button_gre}>More Details</button>
+                <GreButton>More Details</GreButton>
             </div>
         </section>
     )

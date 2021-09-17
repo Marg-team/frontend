@@ -11,18 +11,6 @@ svg.down{
     transform: translateY(1px) !important;
 }
 
-.login_button_gre{
-    font-weight: bold;
-    width: 10rem;
-    border-radius: 30px;
-    background-image: linear-gradient(to bottom, #7BBBEE 0%, #281AC8 100%);
-    border: none;
-    color: white;
-    text-align: center;
-    font-size: 16px;
-    height: 3.5rem;
-}
-
 .feedback{
     background-image: linear-gradient(to bottom, #7BBBEE 0%, #281AC8 100%);
     padding-bottom: 4rem;
