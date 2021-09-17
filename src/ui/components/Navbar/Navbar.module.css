@@ -22,12 +22,13 @@
   margin-right:  3rem;
   width: 7rem;
   border-radius: 30px;
-  background-color: blue;
+  background-image: linear-gradient(to bottom, #7BBBEE 0%, #281AC8 100%);
   border: none;
   color: white;
   text-align: center;
-  font-size: 16px;
-  height: 2.5rem;
+  font-size: 14px;
+  height: 2.7rem;
+  font-weight: bold;
 }
 
 .logo{
