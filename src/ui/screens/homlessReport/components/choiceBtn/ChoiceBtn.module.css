@@ -23,3 +23,11 @@
 .ml_auto{
     margin-left: auto;
 }
+
+@media screen and (max-width: 576px) {
+    .choice_btn{
+        height: 100px;
+        width: 100%;
+        margin-bottom: 1rem !important;
+    }
+}

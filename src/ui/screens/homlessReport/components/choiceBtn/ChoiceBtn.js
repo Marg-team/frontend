@@ -7,12 +7,12 @@ export default function ChoiceBtn() {
     return (
         <Container>
             <Row>
-                <Col>   
+                <Col sm={6} xs={12}>   
                     <Link to={`/report/myself/`} className={`${styles.choice_btn} ${styles.ml_auto}`}>
                         Myself
                     </Link>
                 </Col>
-                <Col>   
+                <Col sm={6} xs={12}>   
                     <Link to={`/report/other/`} className={styles.choice_btn}>
                         Others
                     </Link>
