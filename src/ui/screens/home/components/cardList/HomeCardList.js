@@ -1,29 +1,34 @@
 import React from 'react'
 import { Row, Card, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import boat from '../../../../assets/images/1boat.jpg'
+import report from '../../../../assets/images/warning-sign.png'
+import complain from '../../../../assets/images/customer-service.png'
+import donate from '../../../../assets/images/donate.png'
+import more from '../../../../assets/images/more.png'
+
+
 import * as styles from './HomeCardList.module.css'
 
 export default function HomeCardList() {
     const cards = [
         {
             url: '/report/',
-            img: boat,
+            img: report,
             name: 'report'
         },
         {
             url: '/complain/',
-            img: boat,
+            img: complain,
             name: 'complain'
         },
         {
             url: '/donate/',
-            img: boat,
+            img: donate,
             name: 'donate'
         },
         {
             url: '/about',
-            img: boat,
+            img: more,
             name: 'about us'
         },
     ];
@@ -36,7 +41,7 @@ export default function HomeCardList() {
                         cards.map((e)=>{
                             return <Col lg={3} md={6} sm={6} xs={6} key={e}>
                                 <Card>
-                                    <Card.Img src={e.img}/>
+                                    <Card.Img style={{padding: 22}} src={e.img}/>
                                     <Card.Text>
                                         <Link to={e.url} className={`btn btn-primary d-grid ${styles.card_btn}`}>{e.name.toUpperCase()}</Link>
                                     </Card.Text>

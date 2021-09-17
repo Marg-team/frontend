@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import * as styles from './HomeAbout.module.css'
-import boat from '../../../../assets/images/1boat.jpg'
+import welcome from '../../../../assets/images/help.jpg'
 import GreButton from '../../../../components/Button/GreButton/GreButton'
 import { useHistory } from 'react-router'
 
@@ -14,7 +14,7 @@ export default function HomeAbout() {
         <section>
             <Row className={styles.about}>
                 <Col sm={12} md={6} className={styles.right_about}>
-                    <img className={styles.about_img} src={boat} alt=""/>
+                    <img className={styles.about_img} src={welcome} alt=""/>
                 </Col>
                 <Col className={styles.left_about}>
                     <h1>Welcome to AASHROY</h1>
