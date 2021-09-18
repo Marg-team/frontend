@@ -1,0 +1,146 @@
+.bg{
+    width: 100vw;
+    overflow: hidden;
+    z-index: -1;
+    position: absolute;
+}
+
+.bg > svg {
+    width: unset;
+}
+
+.donate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.content{
+    margin-top: 9rem;
+    width: 70%;
+}
+
+.content > h1{
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 56px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 3rem;
+}
+
+.card{
+    background: #FFFFFF;
+    box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    padding: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card h3{
+    color: #3532CE;
+    font-weight: bold;
+    font-size: 21px;
+}
+
+.line{
+    height: 8px;
+    width: 80px;
+    background: red;
+    left: 10px;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    margin-top: 12px;
+}
+
+@media screen and (max-width: 576px) {
+    .content{
+        width: 90%;
+    }
+}
+
+.form input[type=text]{
+    width: 100%;
+    color: #2F2F2F;
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn{
+    margin-top: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    height: 50px;
+    color: #FFFFFF;
+    background: linear-gradient(178.18deg, #6B9BE7 -13.56%, #3532CE 158.3%);
+    border-radius: 100px;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.label{
+    color: #777777;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.radio{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+
+.radio input[type=text] {
+    width: 40% !important;
+    max-width: 200px;
+    margin-bottom: 0;
+}
+
+.radio_btn{
+    width: 130px;
+}
+
+.radio_group{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 655px) {
+    .radio input[type=text] {
+        width: 100% !important;
+        max-width: unset !important;
+    }
+    .radio_btn{
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .radio{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .radio input[type=text] {
+        margin-top: 1rem;
+    }
+}
+

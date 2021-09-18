@@ -12,7 +12,7 @@ import { useLocation } from 'react-router'
 
 export default function Home() {
     const location = useLocation();
-    if(location.state.scrolltop){
+    if(location.state&&location.state.scrolltop){
         window.scrollTo(0,0)
     }
     return (
