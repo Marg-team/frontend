@@ -124,6 +124,16 @@
     margin-bottom: 1rem;
 }
 
+.modal{
+    border-radius: 1rem;
+    border: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+
 @media screen and (max-width: 655px) {
     .radio input[type=text] {
         width: 100% !important;
