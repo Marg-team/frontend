@@ -153,9 +153,9 @@ export default function Donate() {
                 </div>
             </div>
             <Modal1
-            show={isModalOpen}
-            onHide={() => {setIsModalOpen(false)}}
-        />
+                show={isModalOpen}
+                onHide={() => {setIsModalOpen(false)}}
+            />
             <Portal node={document && document.getElementById('loader')}>
                 { 
                     isLoading&&<div className="loader-context">
