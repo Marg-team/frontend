@@ -31,3 +31,20 @@
         margin-bottom: 1rem !important;
     }
 }
+
+.choice_content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 50%;
+}
+
+.choice_content > img {
+    height: 50%;
+    margin-bottom: 0.5rem;
+}
+
+.choice_btn:hover img {
+    filter: invert(100%);
+}
