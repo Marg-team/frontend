@@ -83,7 +83,7 @@ export default function Complain() {
             </Modal.Footer>
           </Modal>
         );
-      }
+    }
 
     return (
         <section>
