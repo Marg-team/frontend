@@ -8,29 +8,41 @@ import Complain from './ui/screens/complain/Complain';
 import Donate from './ui/screens/donate/Donate';
 import Home from './ui/screens/home/home';
 import HomelessReport from './ui/screens/homlessReport/homelessReport';
+import Login from './ui/screens/login/Login';
+import Signup from './ui/screens/signup/Signup';
 
 function App() {
   return (
     <div className="App">
-      <Navigation/>
       <Switch>
-        <Route path="/report">
-          <HomelessReport/>
+        <Route path="/signup" exact>
+          <Signup/>
         </Route>
-        <Route path="/complain">
-          <Complain/>
-        </Route>
-        <Route path="/donate">
-          <Donate/>
-        </Route>
-        <Route path="/" exact>
-          <Home />
+        <Route path="/login" exact>
+          <Login/>
         </Route>
         <Suspense>
-          <Page404/>
+          <Navigation/>
+          <Switch>
+            <Route path="/report">
+              <HomelessReport/>
+            </Route>
+            <Route path="/complain">
+              <Complain/>
+            </Route>
+            <Route path="/donate">
+              <Donate/>
+            </Route>
+            <Route path="/" exact>
+              <Home />
+            </Route>
+            <Suspense>
+              <Page404/>
+            </Suspense>
+          </Switch>
+          <Footer/>
         </Suspense>
       </Switch>
-      <Footer/>
     </div>
   );
 }
