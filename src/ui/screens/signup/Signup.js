@@ -1,9 +1,19 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Tab, Tabs } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import * as styles from './Signup.module.css'
+import { useHistory } from 'react-router'
 
 export default function Signup() {
+    const history = useHistory();
+
+    useEffect(() => {
+        const token = localStorage.getItem('secret_token');
+        if(!!token){
+            history.replace(`/`)
+        }
+    }, [history])
+    
     return (
         <section>
             <div className={`${styles.wrapper} ${styles.fadeInDown}`}>
