@@ -3,12 +3,14 @@ import axios from 'axios';
 import React, { useRef, useState } from 'react'
 import { Modal, Spinner } from 'react-bootstrap';
 import { Portal } from 'react-portal';
+import { getBase64 } from '../../../../../logic/base64';
 import { baseUrl } from '../../../../../logic/config';
 import * as styles from './MyselfReport.module.css'
 
 export default function MyselfReport() {
     const inputFileRef = useRef( null );
     const [fileName, setFileName] = useState(null)
+    const [file, setFile] = useState(null);
 
     const [isLoading, setisLoading] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,6 +22,9 @@ export default function MyselfReport() {
 
     const onFileChange = (e) => {
         setFileName(formRef.current[4].files[0].name)
+        getBase64(formRef.current[4].files[0], (result)=>{
+            setFile(result);
+        })
     }
 
     const submitForm = async (e) => {
@@ -30,7 +35,6 @@ export default function MyselfReport() {
         const contact = formRef.current[1].value;
         const address = formRef.current[2].value;
         const desc = formRef.current[3].value;
-        const proof = formRef.current[4].files[0];
 
         let headers = new Headers();
 
@@ -47,7 +51,7 @@ export default function MyselfReport() {
                 contact: contact,
                 address: address,
                 desc: desc,
-                proof: proof
+                proof: file
             }
         )
         setisLoading(false);

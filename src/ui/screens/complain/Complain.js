@@ -6,6 +6,7 @@ import Button from '@restart/ui/esm/Button';
 import { Portal } from 'react-portal';
 import { baseUrl } from '../../../logic/config';
 import axios from 'axios';
+import { getBase64 } from '../../../logic/base64';
 
 export default function Complain() {
     useEffect(() => {
@@ -15,6 +16,8 @@ export default function Complain() {
     const [isLoading, setisLoading] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [fileName, setFileName] = useState(null);
+    const [file, setFile] = useState(null);
+
 
     const inputFileRef = useRef( null );
 
@@ -25,6 +28,9 @@ export default function Complain() {
 
     const onFileChange = (e) => {
         setFileName(formRef.current[2].files[0].name)
+        getBase64(formRef.current[2].files[0], (result)=>{
+            setFile(result);
+        })
     }
 
     const formRef = useRef(null);
@@ -35,7 +41,6 @@ export default function Complain() {
         console.log(formRef);
         const situation = formRef.current[0].value;
         const address = formRef.current[1].value;
-        const proof = formRef.current[2].files[0];
 
         let headers = new Headers();
 
@@ -49,7 +54,7 @@ export default function Complain() {
                 header: headers,
                 situation: situation,
                 address: address,
-                proof: proof
+                proof: file
             }
         )
         setisLoading(false);
