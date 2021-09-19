@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import * as styles from './Login.module.css'
 
 export default function Login() {
+    const emailRef = useRef(null)
+    const passwordRef = useRef(null)
     return (
         <section>
             <div className={`${styles.wrapper} ${styles.fadeInDown}`}>
@@ -13,8 +15,8 @@ export default function Login() {
                     </div>
 
                     <form>
-                        <input type="text" id="email" placeholder="Email"/>
-                        <input type="text" id="password" placeholder="Password"/>
+                        <input type="text" id="email" placeholder="Email" required/>
+                        <input type="password" id="password" placeholder="Password" required/>
                         <input type="submit" value="Log In"/>
                     </form>
 
