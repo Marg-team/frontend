@@ -50,6 +50,12 @@ export default function Login() {
                 return;
             }
             localStorage.setItem('secret_token', response.data.token)
+            
+            if(!!response.data.user.volunteerRef){
+                localStorage.setItem('volunteerRef', response.data.user.volunteerRef)
+            }else if(!!response.data.user.ngoRef){
+                localStorage.setItem('ngoRef', response.data.user.ngoRef)
+            }
             setisLoading(false);
 
             history.push(`/admin/`);
