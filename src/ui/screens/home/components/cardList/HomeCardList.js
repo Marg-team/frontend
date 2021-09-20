@@ -41,7 +41,7 @@ export default function HomeCardList() {
                         cards.map((e)=>{
                             return <Col lg={3} md={6} sm={6} xs={6} key={e.name}>
                                 <Card>
-                                    <Card.Img style={{padding: 22}} src={e.img}/>
+                                    <Card.Img style={{padding: 22, objectFit: 'contain'}} src={e.img}/>
                                     <Card.Text>
                                         <Link to={e.url} className={`btn btn-primary d-grid ${styles.card_btn}`}>{e.name.toUpperCase()}</Link>
                                     </Card.Text>
