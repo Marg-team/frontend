@@ -8,9 +8,18 @@ export default function Navigation() {
     const history = useHistory();
     const location = useLocation();
     const buttonClickHandler = () => {
+        if(isLogged){
+            localStorage.removeItem('secret_token');
+            localStorage.removeItem('ngoRef');
+            localStorage.removeItem('volunteerRef');
+            setIsLogged(false);
+            return;
+        }
         history.push('/login/');
     }
+
     const [isDark, setDark] = useState(false)
+    const [isLogged, setIsLogged] = useState(null)
 
     useEffect(() => {
         if(location.pathname==="/complain/"){
@@ -19,6 +28,14 @@ export default function Navigation() {
             setDark(false);
         }
     }, [location])
+
+    useEffect(() => {
+        if(!!localStorage.getItem('secret_token')){
+            setIsLogged(true)
+        }else(
+            setIsLogged(false)
+        )
+    }, [])
 
     return (
         <section>
@@ -33,12 +50,12 @@ export default function Navigation() {
                     <Nav.Link activeClassName={styles.active} as={NavLink} to={{pathname: `/donate/`}}>Donate</Nav.Link>
                     <Nav.Link activeClassName={styles.active} as={NavLink} to={{pathname: `/about/`}}>About Us</Nav.Link>
                     <MediaQuery maxWidth={1200}>
-                        <Nav.Link href={`/login/`}>Login</Nav.Link>
+                        <Nav.Link onClick={buttonClickHandler}>{!isLogged? "Login": "Logout"}</Nav.Link>
                     </MediaQuery>
                 </Nav>
                 </Navbar.Collapse>
                 <MediaQuery minWidth={1200}>
-                    <button type="button" onClick={buttonClickHandler} className={styles.login_button}>LOGIN</button>
+                    <button type="button" onClick={buttonClickHandler} className={styles.login_button}>{!isLogged? "LOGIN": "LOGOUT"}</button>
                 </MediaQuery>
             </Navbar>
         </section>
