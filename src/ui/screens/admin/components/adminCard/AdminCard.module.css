@@ -1,0 +1,16 @@
+.card {
+    background: #FFFFFF;
+    box-shadow: 0px 3.5px 5.5px rgba(0, 0, 0, 0.02);
+    border-radius: 15px;
+    margin-left: 13px;
+    margin-right: 13px;
+    margin-bottom: 13px;
+    padding: 22px;
+}
+
+.header_text{
+    color: #2D3748;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 1rem;
+}
