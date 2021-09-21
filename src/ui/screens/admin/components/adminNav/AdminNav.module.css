@@ -1,0 +1,51 @@
+.header h1, .header h4{
+    display: inline;
+}
+
+.header h1 {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.header h4 {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    padding-left: 33px;
+    padding-right: 33px;
+    padding-top: 24px;
+    padding-bottom: 18px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toolbar input{
+    background: #FFFFFF;
+    border: 0.5px solid #E2E8F0;
+    box-sizing: border-box;
+    border-radius: 15px;
+    height: 36px !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 12px;
+    min-width: 200px;
+}
+
+.toolbar svg {
+    width: 23px;
+}
+
+.toolbar button {
+    border: none;
+    background: none;
+    padding-left: 1rem;
+}
