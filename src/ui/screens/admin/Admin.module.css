@@ -1,12 +1,11 @@
 .main {
-    display: flex;
-    flex-direction: row;
+    padding-top: 6.8rem;
 }
 
 .content {
     display: flex;
     flex-direction: column;
-    flex: 2;
+    margin-left: 320px;
 }
 
 .sideway {
@@ -21,4 +20,11 @@
 
 .donation {
     flex: 1;
+}
+
+@media screen and (max-width: 1000px) {
+    .content {
+        margin-left: auto !important;
+        width: calc( 70vw - 15px);
+    }
 }

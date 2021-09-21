@@ -5,6 +5,7 @@ import AdminNav from './components/adminNav/AdminNav';
 import AdminSidebar from './components/adminSidebar/AdminSidebar';
 import * as styles from './Admin.module.css'
 import AdminTable from './components/adminTable/AdminTable';
+import ReportTile from './components/reportTile/ReportTile';
 
 export default function Admin() {
     const [type, setType] = useState(null);
@@ -30,6 +31,8 @@ export default function Admin() {
                     </AdminCard>
                     <div className={styles.sideway}>
                         <AdminCard className={styles.report} title="Recent Reports">
+                            <ReportTile/>
+                            <ReportTile/>
 
                         </AdminCard>
 

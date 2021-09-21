@@ -5,6 +5,7 @@
     margin-right: 13px;
     width: 30%;
     max-width: 300px;
+    position: fixed;
 }
 
 .sidebar svg{
