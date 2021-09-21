@@ -1,0 +1,43 @@
+import React from 'react'
+import { Table } from 'react-bootstrap'
+import * as styles from './CrimeReport.module.css'
+
+export default function CrimeReport() {
+    return (
+        <Table hover className={styles.table}>
+            <thead>
+                <tr>
+                    <th>DETAILS</th>
+                    <th>ADDRESS</th>
+                    <th>STATUS</th>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    [1,2,3].map((e)=>{
+                        return <tr>
+                            <td>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fusce proin dignissim dolor pulvinar massa elit massa urna. Justo, donec quis dui tellus vel nisl nunc. Cras sit risus, id gravida mauris, lectus ultricies pulvinar. Lectus nullam enim dictum auctor vitae purus adipiscing est odio. Amet, pulvinar in blandit at pharetra. Ultricies lorem consequat gravida eu.
+                            </td>
+                            <td>Akakhor tolot, Matir uporot, 786123</td>
+                            <td>
+                                <button>
+                                    <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M30 15.5001C30 23.5083 23.5081 30.0001 15.5 30.0001C7.49187 30.0001 1 23.5083 1 15.5001C1 7.49199 7.49187 1.00012 15.5 1.00012C23.5081 1.00012 30 7.49199 30 15.5001Z" fill="#21FA6B"/>
+                                        <path d="M7.76822 15.3599L12.7682 21.3599M11.5799 21.5135L24.1314 10.956M30 15.5001C30 23.5083 23.5081 30.0001 15.5 30.0001C7.49187 30.0001 1 23.5083 1 15.5001C1 7.49199 7.49187 1.00012 15.5 1.00012C23.5081 1.00012 30 7.49199 30 15.5001Z" stroke="#F9FFFB" stroke-width="2"/>
+                                    </svg>
+                                </button>
+                                <button>
+                                    <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M30 15.5001C30 23.5083 23.5081 30.0001 15.5 30.0001C7.49187 30.0001 1 23.5083 1 15.5001C1 7.49199 7.49187 1.00012 15.5 1.00012C23.5081 1.00012 30 7.49199 30 15.5001Z" fill="#C0C7C2"/>
+                                        <path d="M10.1423 10.9039L20.7331 22.32M10.2628 22.3244L21.2628 10.3244M30 15.5001C30 23.5083 23.5081 30.0001 15.5 30.0001C7.49187 30.0001 1 23.5083 1 15.5001C1 7.49199 7.49187 1.00012 15.5 1.00012C23.5081 1.00012 30 7.49199 30 15.5001Z" stroke="#FFFDFD" stroke-width="2"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                    })
+                }
+            </tbody>
+        </Table>
+    )
+}

@@ -7,6 +7,7 @@ import * as styles from './Admin.module.css'
 import NgoRequest from './components/ngoRequest/NgoRequest';
 import ReportTile from './components/reportTile/ReportTile';
 import DonationTile from './components/donationTile/DonationTile';
+import CrimeReport from './components/crimeReport/CrimeReport';
 
 export default function Admin() {
     const [type, setType] = useState(null);
@@ -64,9 +65,6 @@ export default function Admin() {
                     <div className={styles.main}>
                         <AdminSidebar/>
                         <div className={styles.content}>
-                            <AdminCard title="Crime Report">
-                                <NgoRequest/>
-                            </AdminCard>
                             <div className={styles.sideway}>
                                 <AdminCard className={styles.report} title="Assigned Reports">
                                     {
@@ -89,6 +87,9 @@ export default function Admin() {
                                     <DonationTile/>
                                 </AdminCard>
                             </div>
+                            <AdminCard title="Crime Report">
+                                <CrimeReport/>
+                            </AdminCard>
                         </div>
                     </div>
                 </div>
