@@ -1,0 +1,24 @@
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+
+.sideway {
+    display: flex;
+    flex-direction: row; 
+}
+
+.report {
+    flex: 2;
+    margin-right: unset;
+}
+
+.donation {
+    flex: 1;
+}
