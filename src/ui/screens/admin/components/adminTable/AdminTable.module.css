@@ -1,0 +1,33 @@
+
+.table th{
+    color: #A0AEC0;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.table td {
+    color: #2D3748;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.table td p {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 140%;
+    color: #718096;
+}
+
+.table svg {
+    width: 30px;
+}
+
+.table button {
+    border: none;
+    background: none;
+    transition: all 300ms;
+}
+
+.table button:hover {
+    transform: scale(1.2);
+}
