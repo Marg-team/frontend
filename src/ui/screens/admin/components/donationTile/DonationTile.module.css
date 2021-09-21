@@ -1,0 +1,42 @@
+.buttons svg {
+    width: 30px;
+}
+
+.buttons {
+    display: flex;
+}
+
+.buttons button {
+    border: none;
+    background: none;
+    transition: all 300ms;
+}
+
+.buttons button:hover {
+    transform: scale(1.2);
+}
+
+.contents {
+    display: flex;
+    flex-direction: column;
+}
+
+.contents h4 {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 140%;
+    color: #2D3748;
+}
+
+.contents span {
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 150%;
+    color: #A0AEC0;
+}
+
+.tile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
