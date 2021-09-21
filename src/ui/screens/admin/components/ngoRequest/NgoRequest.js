@@ -1,6 +1,6 @@
 import React from 'react'
 import { Table } from 'react-bootstrap'
-import * as styles from './AdminTable.module.css'
+import * as styles from './NgoRequest.module.css'
 
 export default function AdminTable() {
     return (
