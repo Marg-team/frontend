@@ -1,14 +1,14 @@
 import React from 'react'
 import * as styles from './DonationTile.module.css'
 
-export default function DonationTile() {
+export default function DonationTile({header, phone, address}) {
     return (
         <>
         <div className={styles.tile}>
             <div className={styles.contents}>
-                <h4>Shinchan</h4>
-                <span>98787878</span>
-                <span>GNB Road, TSK, 781020</span>
+                <h4>{header}</h4>
+                <span>{phone}</span>
+                <span>{address}</span>
             </div>
             <div className={styles.buttons}>
                 <button>
