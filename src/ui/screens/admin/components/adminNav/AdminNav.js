@@ -1,12 +1,12 @@
 import React from 'react'
 import * as styles from './AdminNav.module.css'
 
-export default function AdminNav() {
+export default function AdminNav({type=0}) {
     return (
         <nav className={styles.nav}>
             <div className={styles.header}>
                 <h1>AASHROY</h1>
-                <h4>VOLUNTEER DASHBOARD</h4>
+                <h4>{type===0?"VOLUNTEER DASHBOARD":"NGO DASHBOARD"}</h4>
             </div>
             <div className={styles.toolbar}>
                 <input type="search" placeholder="Search Here"/>

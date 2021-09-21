@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import * as styles from './AdminSidebar.module.css'
 
-export default function AdminSidebar() {
+export default function AdminSidebar({ngo_q=0, donation_q=0, report_q=0}) {
     return (
         <section className={styles.sidebar}>
             <NavLink className={styles.nav_btn} to={`/`}>
@@ -13,8 +13,18 @@ export default function AdminSidebar() {
                 <span>Dashboard</span>
             </NavLink>
             <div className={styles.nav_notice}>
-                <span>Any simple</span>
-                <p>message</p>
+                <span>Your Contribution</span>
+                <p>
+                    {
+                        ngo_q + " NGO approved, "
+                    }
+                    {
+                        donation_q + " Donation taken, "
+                    }
+                    {
+                        report_q + " Report Assigned"
+                    }
+                </p>
             </div>
         </section>
     )
