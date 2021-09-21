@@ -2,7 +2,7 @@ import React from 'react'
 import { Table } from 'react-bootstrap'
 import * as styles from './NgoRequest.module.css'
 
-export default function AdminTable() {
+export default function NgoRequest() {
     return (
         <Table hover className={styles.table}>
             <thead>
