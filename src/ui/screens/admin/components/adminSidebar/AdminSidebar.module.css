@@ -1,0 +1,57 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    margin-left: 13px;
+    margin-right: 13px;
+    width: 30%;
+    max-width: 300px;
+}
+
+.sidebar svg{
+    width: 33px;
+    padding: 8px;
+    background: linear-gradient(178.18deg, #6B9BE7 -13.56%, #3532CE 158.3%);
+    border-radius: 12px;   
+    margin-right: 0.5rem;
+}
+
+.nav_btn{
+    color: #000000;
+    text-decoration: none;
+    background: #FFFFFF;
+    box-shadow: 0px 3.5px 5.5px rgba(0, 0, 0, 0.02);
+    border-radius: 15px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-weight: bold;
+    font-size: 12px;
+    width: 100%;
+}
+
+.nav_notice{
+    color: #ffffff;
+    text-decoration: none;
+    background: linear-gradient(178.18deg, #6B9BE7 -13.56%, #3532CE 158.3%);
+    border-radius: 15px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-weight: bold;
+    font-size: 12px;
+    width: 100%;
+    height: 170px;
+    margin-top: 1rem;
+}
+
+.nav_notice span {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.nav_notice p {
+    font-weight: normal;
+    font-size: 12px;
+}
