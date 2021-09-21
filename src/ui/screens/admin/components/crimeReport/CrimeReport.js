@@ -2,9 +2,9 @@ import React from 'react'
 import { Table } from 'react-bootstrap'
 import * as styles from './CrimeReport.module.css'
 
-export default function CrimeReport() {
+export default function CrimeReport({crimes}) {
     return (
-        <Table hover className={styles.table}>
+        <Table hover className={`${styles.table}`}>
             <thead>
                 <tr>
                     <th>DETAILS</th>
@@ -14,12 +14,14 @@ export default function CrimeReport() {
             </thead>
             <tbody>
                 {
-                    [1,2,3].map((e, i)=>{
+                    crimes.map((e, i)=>{
                         return <tr key={i}>
                             <td>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fusce proin dignissim dolor pulvinar massa elit massa urna. Justo, donec quis dui tellus vel nisl nunc. Cras sit risus, id gravida mauris, lectus ultricies pulvinar. Lectus nullam enim dictum auctor vitae purus adipiscing est odio. Amet, pulvinar in blandit at pharetra. Ultricies lorem consequat gravida eu.
+                                {e.situation}
                             </td>
-                            <td>Akakhor tolot, Matir uporot, 786123</td>
+                            <td>
+                                {e.address}
+                            </td>
                             <td>
                                 <button>
                                     <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
