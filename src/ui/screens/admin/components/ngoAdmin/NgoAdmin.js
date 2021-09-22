@@ -108,7 +108,10 @@ export default function NgoAdmin() {
                         </AdminCard>
                     </div>
                     <AdminCard title="Crime Report">
-                        <CrimeReport crimes={crimes}/>
+                        <CrimeReport 
+                            crimes={crimes}
+                            setCrimes={setcrimes}
+                        />
                     </AdminCard>
                 </div>
             </div>
