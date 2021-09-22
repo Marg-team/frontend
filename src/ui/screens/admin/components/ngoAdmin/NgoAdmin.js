@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useCallback, useEffect, useState} from 'react'
 import AdminCard from '../adminCard/AdminCard'
 import AdminNav from '../adminNav/AdminNav'
 import AdminSidebar from '../adminSidebar/AdminSidebar'
@@ -8,17 +8,28 @@ import ReportTile from '../reportTile/ReportTile'
 import * as styles from '../../Admin.module.css'
 import { baseUrl } from '../../../../../logic/config'
 import axios from 'axios'
+import { Portal } from 'react-portal'
+import { Spinner } from 'react-bootstrap'
 
 export default function NgoAdmin() {
+    const fetchData = useCallback( async () =>{
+        await getAllDonation();
+        await getAllCrime();
+        await getAllReport();
+        setisLoading(false);
+    },[]);
+    
     useEffect(() => {
-        getAllDonation();
-        getAllCrime();
-        getAllReport();
-    }, [])
+        fetchData()
+    }, [fetchData])
+
+    
 
     const [donations, setdonations] = useState([])
     const [crimes, setcrimes] = useState([])
     const [reports, setreports] = useState([])
+    const [isLoading, setisLoading] = useState(true)
+
 
 
     const getAllDonation = async () => {
@@ -82,6 +93,7 @@ export default function NgoAdmin() {
                     <div className={styles.sideway}>
                         <AdminCard className={styles.report} title="Assigned Reports">
                             {
+                                reports.length===0&&!isLoading? <span>No Report Found</span>:
                                 reports.map((e)=>{
                                     return <ReportTile
                                         type={1}
@@ -94,16 +106,21 @@ export default function NgoAdmin() {
                         </AdminCard>
 
                         <AdminCard className={styles.donation} title="Donations">
-                            <hr/>
                             {
-                                donations.map((e)=>{
-                                    return <DonationTile
-                                        donation={e}
-                                        setDonation={setdonations}
-                                        type={1}
-                                        key={e._id}
-                                    />
-                                })
+                                donations.length===0&&!isLoading? <span>No Donation Found</span>:
+                                <>
+                                    <hr/>
+                                    {
+                                        donations.map((e)=>{
+                                            return <DonationTile
+                                                donation={e}
+                                                setDonation={setdonations}
+                                                type={1}
+                                                key={e._id}
+                                            />
+                                        })
+                                    }
+                                </>
                             }
                         </AdminCard>
                     </div>
@@ -111,10 +128,19 @@ export default function NgoAdmin() {
                         <CrimeReport 
                             crimes={crimes}
                             setCrimes={setcrimes}
+                            isBeingLoad={isLoading}
                         />
                     </AdminCard>
                 </div>
             </div>
+
+            <Portal node={document && document.getElementById('loader')}>
+                { 
+                    isLoading&&<div className="loader-context dark">
+                        <Spinner animation="border" variant="primary"/>
+                    </div>
+                }
+            </Portal>
         </>
     )
 }

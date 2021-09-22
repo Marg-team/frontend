@@ -5,7 +5,7 @@ import { Portal } from 'react-portal'
 import { baseUrl } from '../../../../../logic/config'
 import * as styles from './CrimeReport.module.css'
 
-export default function CrimeReport({crimes, setCrimes}) {
+export default function CrimeReport({crimes, setCrimes, isBeingLoad}) {
     const [isLoading, setisLoading] = useState(false)
 
     const onDelete = async (crime) => {
@@ -89,7 +89,8 @@ export default function CrimeReport({crimes, setCrimes}) {
             </thead>
             <tbody>
                 {
-                    crimes.map((e)=>{
+                    crimes.length===0&&!isBeingLoad? <span>No Report Found</span>
+                    :crimes.map((e)=>{
                         return <tr key={e._id}>
                             <td>
                                 {e.situation}

@@ -27,3 +27,7 @@ code {
   align-items: center;
   z-index: 2000;
 }
+
+#loader > .dark {
+  background-color: #F8F8F8 !important;
+}
