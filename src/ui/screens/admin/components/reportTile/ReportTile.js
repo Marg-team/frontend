@@ -12,15 +12,15 @@ export default function ReportTile({type=0, header, him_homeless, phone, address
                 </div>
                 <div className={styles.items}>
                     <span>Phone No.:</span>
-                    <span>{phone}</span>
+                    <span>{phone??"Unknown"}</span>
                 </div>
                 <div className={styles.items}>
                     <span>Full Address:</span>
-                    <span>{address}</span>
+                    <span>{address??"Unknown"}</span>
                 </div>
                 <div className={styles.items}>
                     <span>About:</span>
-                    <span>{about}</span>
+                    <span>{about??"Unknown"}</span>
                 </div>
             </div>
             <div className={styles.buttons}>
