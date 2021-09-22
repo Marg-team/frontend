@@ -41,6 +41,39 @@ export default function DonationTile({donation, setDonation, type}) {
             console.log(err)
         }
     }
+    const onDone = async () => {
+        try{
+            setisLoading(true)
+            const token = localStorage.getItem('secret_token');
+
+            const response = await axios.post(
+                `${baseUrl}/donation/${donation._id}/${type===0?1:2}`,
+                {},
+                {
+                    headers: {
+                        'Content-Type':'application/json',
+                        'Accept': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    }
+                }
+            )
+            console.log(response)
+            setisLoading(false)
+            setDonation(
+                (donations)=>{
+                    const r = [...donations];
+                    const index = r.indexOf(donation);
+                    if (index > -1) {
+                        r.splice(index, 1);
+                    }
+                    return r;
+                }
+            )
+        }catch (err){
+            setisLoading(false)
+            console.log(err)
+        }
+    }
     return (
         <>
         <div className={styles.tile}>
@@ -50,7 +83,7 @@ export default function DonationTile({donation, setDonation, type}) {
                 <span>{donation.address}</span>
             </div>
             <div className={styles.buttons}>
-                <button>
+                <button onClick={onDone}>
                     <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M30 15.5001C30 23.5083 23.5081 30.0001 15.5 30.0001C7.49187 30.0001 1 23.5083 1 15.5001C1 7.49199 7.49187 1.00012 15.5 1.00012C23.5081 1.00012 30 7.49199 30 15.5001Z" fill="#21FA6B"/>
                         <path d="M7.76822 15.3599L12.7682 21.3599M11.5799 21.5135L24.1314 10.956M30 15.5001C30 23.5083 23.5081 30.0001 15.5 30.0001C7.49187 30.0001 1 23.5083 1 15.5001C1 7.49199 7.49187 1.00012 15.5 1.00012C23.5081 1.00012 30 7.49199 30 15.5001Z" stroke="#F9FFFB" strokeWidth="2"/>
