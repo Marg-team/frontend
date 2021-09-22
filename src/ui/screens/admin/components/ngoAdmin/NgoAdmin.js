@@ -85,11 +85,8 @@ export default function NgoAdmin() {
                                 reports.map((e)=>{
                                     return <ReportTile
                                         type={1}
-                                        about={e.desc}
-                                        address={e.address}
-                                        header={e.name}
-                                        him_homeless={e.him_homeless}
-                                        phone={e.phone}
+                                        report={e}
+                                        setReport={setreports}
                                         key={e._id}
                                     />
                                 })
@@ -101,9 +98,9 @@ export default function NgoAdmin() {
                             {
                                 donations.map((e)=>{
                                     return <DonationTile
-                                        header={e.name}
-                                        phone={e.phone}
-                                        address={e.address}
+                                        donation={e}
+                                        setDonation={setdonations}
+                                        type={1}
                                         key={e._id}
                                     />
                                 })

@@ -67,12 +67,9 @@ export default function VolunteerAdmin() {
                                 reports.map((e)=>{
                                     return <ReportTile
                                         type={0}
-                                        about={e.desc}
-                                        address={e.address}
-                                        header={e.name}
-                                        him_homeless={e.him_homeless}
-                                        phone={e.phone}
+                                        report={e}
                                         key={e._id}
+                                        setReport={setreports}
                                     />
                                 })
                             }
@@ -83,9 +80,9 @@ export default function VolunteerAdmin() {
                             {
                                 donations.map((e)=>{
                                     return <DonationTile
-                                        header={e.name}
-                                        phone={e.phone}
-                                        address={e.address}
+                                        donation={e}
+                                        setDonation={setdonations}
+                                        type={0}
                                         key={e._id}
                                     />
                                 })
