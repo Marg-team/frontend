@@ -1,4 +1,6 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { baseUrl } from '../../../../../logic/config'
 import * as styles from '../../Admin.module.css'
 import AdminCard from '../adminCard/AdminCard'
 import AdminNav from '../adminNav/AdminNav'
@@ -8,6 +10,48 @@ import NgoRequest from '../ngoRequest/NgoRequest'
 import ReportTile from '../reportTile/ReportTile'
 
 export default function VolunteerAdmin() {
+    useEffect(() => {
+        getAllDonation();
+        getAllReport();
+    }, [])
+
+    const [donations, setdonations] = useState([]);
+    const [reports, setreports] = useState([]);
+
+    const getAllDonation = async () => {
+        const token = localStorage.getItem('secret_token');
+
+        const response = await axios.get(
+            `${baseUrl}/donation/volunteer`,
+            {
+                headers: {
+                    'Content-Type':'application/json',
+                    'Accept': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+            }
+        )
+        console.log(response)
+        setdonations(response.data.donationForm)
+    }
+
+    const getAllReport = async () => {
+        const token = localStorage.getItem('secret_token');
+
+        const response = await axios.get(
+            `${baseUrl}/homelessform/volunteer`,
+            {
+                headers: {
+                    'Content-Type':'application/json',
+                    'Accept': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+            }
+        )
+        console.log(response)
+        setreports(response.data.homelessform)
+    }
+
     return (
         <>
             <AdminNav type={0}/>
@@ -20,15 +64,15 @@ export default function VolunteerAdmin() {
                     <div className={styles.sideway}>
                         <AdminCard className={styles.report} title="Recent Reports">
                             {
-                                [1,2].map((e, i)=>{
+                                reports.map((e)=>{
                                     return <ReportTile
                                         type={0}
-                                        about="Mur ghor nai poisa pati nai kosto hoise mur kiba kori help kori diok dada plz plz"
-                                        address="Matir Uporot ,Guwahati,786142"
-                                        header="Mukesh Komdami"
-                                        him_homeless={true}
-                                        phone="9814567891"
-                                        key={i}
+                                        about={e.desc}
+                                        address={e.address}
+                                        header={e.name}
+                                        him_homeless={e.him_homeless}
+                                        phone={e.phone}
+                                        key={e._id}
                                     />
                                 })
                             }
@@ -36,7 +80,16 @@ export default function VolunteerAdmin() {
 
                         <AdminCard className={styles.donation} title="Donations">
                             <hr/>
-                            <DonationTile/>
+                            {
+                                donations.map((e)=>{
+                                    return <DonationTile
+                                        header={e.name}
+                                        phone={e.phone}
+                                        address={e.address}
+                                        key={e._id}
+                                    />
+                                })
+                            }
                         </AdminCard>
                     </div>
                 </div>
