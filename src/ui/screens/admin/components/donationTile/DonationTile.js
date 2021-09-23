@@ -119,7 +119,7 @@ export default function DonationTile({donation, setDonation, type}) {
         <Portal node={document && document.getElementById('loader')}>
             {
                 isOverlay&&<div className="loader-context">
-                    <AssignNgoOverlay donation={donation} onDone={assignNgo}/>
+                    <AssignNgoOverlay donation={donation} onDone={assignNgo} onClose={()=>{setIsOverlay(false)}}/>
                 </div>
             }
         </Portal>

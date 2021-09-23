@@ -84,7 +84,7 @@ export default function ReportTile({type=0, report, setReport}) {
         }
     }
     return (
-        <div className={styles.tile}>
+        <div className={styles.tile} style={type===3?{display: 'block'}:{}}>
             <div className={styles.content}>
                 <h3>{report.name??"Unknown"}</h3>
                 <div className={styles.items}>
@@ -126,7 +126,7 @@ export default function ReportTile({type=0, report, setReport}) {
             <Portal node={document && document.getElementById('loader')}>
                 {
                     isOverlay&&<div className="loader-context">
-                        <AssignNgoOverlay report={report} onDone={assignReport}/>
+                        <AssignNgoOverlay report={report} onDone={assignReport} onClose={()=>{setIsOverlay(false)}}/>
                     </div>
                 }
             </Portal>
