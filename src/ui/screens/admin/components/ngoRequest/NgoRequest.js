@@ -2,13 +2,13 @@ import React from 'react'
 import { Table } from 'react-bootstrap'
 import * as styles from './NgoRequest.module.css'
 
-export default function NgoRequest() {
+export default function NgoRequest({ngoRequest, setNgoRequest}) {
     return (
         <Table hover className={styles.table}>
             <thead>
                 <tr>
                     <th>NGO NAME</th>
-                    <th>OWNER NAME</th>
+                    <th>PHONE NO.</th>
                     <th>REGISTRATION ID</th>
                     <th>ADDRESS</th>
                     <th>STATUS</th>
@@ -16,15 +16,15 @@ export default function NgoRequest() {
             </thead>
             <tbody>
                 {
-                    [1,2,3].map((e, i)=>{
+                    ngoRequest.map((e, i)=>{
                         return <tr key={i}>
                             <td>
-                                <span>NGO 1</span>
-                                <p>et19@gmail.com</p>
+                                <span>{e.name}</span>
+                                <p>{e.email}</p>
                             </td>
-                            <td>Mark</td>
-                            <td>ET19BTHCS015</td>
-                            <td>Akakhor tolot, Matir uporot, 786123</td>
+                            <td>{e.phone}</td>
+                            <td>{e.reg}</td>
+                            <td>{e.address}</td>
                             <td>
                                 <button>
                                     <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">

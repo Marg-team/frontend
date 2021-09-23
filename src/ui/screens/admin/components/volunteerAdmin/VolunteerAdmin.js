@@ -15,6 +15,7 @@ export default function VolunteerAdmin() {
     const fetchData = useCallback( async () =>{
         await getAllDonation();
         await getAllReport();
+        await getAllNgoRequest();
         setisLoading(false);
     },[]);
     
@@ -25,6 +26,25 @@ export default function VolunteerAdmin() {
     const [donations, setdonations] = useState([]);
     const [reports, setreports] = useState([]);
     const [isLoading, setisLoading] = useState(true)
+    const [ngoRequest, setNgoRequest] = useState([])
+
+
+    const getAllNgoRequest = async () => {
+        const token = localStorage.getItem('secret_token');
+
+        const response = await axios.get(
+            `${baseUrl}/ngoConfig/deactive`,
+            {
+                headers: {
+                    'Content-Type':'application/json',
+                    'Accept': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+            }
+        )
+        console.log(response)
+        setNgoRequest(response.data.deactivatedNgo)
+    }
 
 
     const getAllDonation = async () => {
@@ -68,7 +88,10 @@ export default function VolunteerAdmin() {
                 <AdminSidebar/>
                 <div className={styles.content}>
                     <AdminCard title="NEW NGO REQUEST">
-                        <NgoRequest/>
+                        <NgoRequest
+                            ngoRequest={ngoRequest}
+                            setNgoRequest={setNgoRequest}
+                        />
                     </AdminCard>
                     <div className={styles.sideway}>
                         <AdminCard className={styles.report} title="Recent Reports">
