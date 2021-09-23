@@ -4,8 +4,9 @@ import ReportTile from '../reportTile/ReportTile';
 import { Table } from 'react-bootstrap';
 import axios from 'axios';
 import { baseUrl } from '../../../../../logic/config';
+import DonationTile from '../donationTile/DonationTile';
 
-export default function AssignNgoOverlay({report, onDone}) {
+export default function AssignNgoOverlay({report, donation, onDone}) {
     const [allNgo, setallNgo] = useState([])
 
     const getAllNgo = async () => {
@@ -32,7 +33,13 @@ export default function AssignNgoOverlay({report, onDone}) {
     console.log(report)
     return (
         <div className={styles.card}>
-            <ReportTile report={report} type={3}/>
+            {report&&<ReportTile report={report} type={3}/>}
+            {
+                donation&&
+                <div className={`${styles.card} ${styles.child}`} style={{marginBottom: 16}}>
+                    <DonationTile donation={donation} type={3}/>
+                </div>
+            }
             <div className={`${styles.card} ${styles.child}`}>
                 <h2>Assign the nearest NGO</h2>
                 <Table hover className={`${styles.table}`}>
