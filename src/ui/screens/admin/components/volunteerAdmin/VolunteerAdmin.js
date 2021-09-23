@@ -89,7 +89,7 @@ export default function VolunteerAdmin() {
                 <div className={styles.content}>
                     <AdminCard title="NEW NGO REQUEST">
                         <NgoRequest
-                            ngoRequest={ngoRequest}
+                            ngoRequests={ngoRequest}
                             setNgoRequest={setNgoRequest}
                         />
                     </AdminCard>
