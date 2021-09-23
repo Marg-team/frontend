@@ -118,7 +118,7 @@ export default function VolunteerAdmin() {
                                             return <DonationTile
                                                 donation={e}
                                                 setDonation={setdonations}
-                                                type={1}
+                                                type={0}
                                                 key={e._id}
                                             />
                                         })
