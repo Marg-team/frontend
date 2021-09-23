@@ -81,17 +81,20 @@ export default function NgoRequest({ngoRequests, setNgoRequest}) {
     return (
         <Table hover className={styles.table}>
             <thead>
-                <tr>
+                {
+                ngoRequests.length!==0&&<tr>
                     <th>NGO NAME</th>
                     <th>PHONE NO.</th>
                     <th>REGISTRATION ID</th>
                     <th>ADDRESS</th>
                     <th>STATUS</th>
                 </tr>
+                }
             </thead>
             <tbody>
                 {
-                    ngoRequests.map((e, i)=>{
+                    ngoRequests.length===0? <span>No Report Found</span>
+                    :ngoRequests.map((e, i)=>{
                         return <tr key={i}>
                             <td>
                                 <span>{e.name}</span>
