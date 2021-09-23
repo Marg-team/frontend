@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import * as styles from './AdminSidebar.module.css'
+import Clock from 'react-live-clock'
 
 export default function AdminSidebar({ngo_q=0, donation_q=0, report_q=0}) {
     return (
@@ -13,17 +14,14 @@ export default function AdminSidebar({ngo_q=0, donation_q=0, report_q=0}) {
                 <span>Dashboard</span>
             </NavLink>
             <div className={styles.nav_notice}>
-                <span>Your Contribution</span>
+                <span>Welcome to AASHROY</span>
                 <p>
-                    {
-                        ngo_q + " NGO approved, "
-                    }
-                    {
-                        donation_q + " Donation taken, "
-                    }
-                    {
-                        report_q + " Report Assigned"
-                    }
+                    <br/>
+                    TIME: <Clock format={'hh:mm:ss A'} ticking={true} timezone={'GMT+5:30'} />
+                    <br/>
+                    VERSION: 1.0
+                    <br/>
+                    DEVELOPER TEAM: MARG
                 </p>
             </div>
         </section>
