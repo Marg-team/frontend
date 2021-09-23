@@ -13,6 +13,10 @@ import { Spinner } from 'react-bootstrap'
 
 export default function NgoAdmin() {
     const fetchData = useCallback( async () =>{
+        if(!await isActive()){
+            setisLoading(false);
+            return;
+        }
         await getAllDonation();
         await getAllCrime();
         await getAllReport();
@@ -28,10 +32,36 @@ export default function NgoAdmin() {
     const [donations, setdonations] = useState([])
     const [crimes, setcrimes] = useState([])
     const [reports, setreports] = useState([])
+    const [active, setActive] = useState(null)
     const [isLoading, setisLoading] = useState(true)
 
 
 
+    const isActive = async () => {
+        try{
+            const token = localStorage.getItem('secret_token');
+            const ngoRef = localStorage.getItem('ngoRef');
+
+            const response = await axios.post(
+                `${baseUrl}/auth/ngo/isactivated/${ngoRef}`,
+                {},
+                {
+                    headers: {
+                        'Content-Type':'application/json',
+                        'Accept': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                }
+            )
+            console.log(response.data.active);
+            setActive(response.data.active);
+            return response.data.active;
+
+        }catch(err){
+            console.log(err)
+            return false;
+        }
+    }
     const getAllDonation = async () => {
 
         const token = localStorage.getItem('secret_token');
@@ -87,53 +117,57 @@ export default function NgoAdmin() {
     return (
         <>
             <AdminNav type={1}/>
-            <div className={styles.main}>
-                <AdminSidebar/>
-                <div className={styles.content}>
-                    <div className={styles.sideway}>
-                        <AdminCard className={styles.report} title="Assigned Reports">
-                            {
-                                reports.length===0&&!isLoading? <span>No Report Found</span>:
-                                reports.map((e)=>{
-                                    return <ReportTile
-                                        type={1}
-                                        report={e}
-                                        setReport={setreports}
-                                        key={e._id}
-                                    />
-                                })
-                            }
-                        </AdminCard>
+            {
+                !active?
+                <div className={styles.info}>Sorry! Your admin priviledge is not approved yet. Please wait for few days.</div>:
+                <div className={styles.main}>
+                    <AdminSidebar/>
+                    <div className={styles.content}>
+                        <div className={styles.sideway}>
+                            <AdminCard className={styles.report} title="Assigned Reports">
+                                {
+                                    reports.length===0&&!isLoading? <span>No Report Found</span>:
+                                    reports.map((e)=>{
+                                        return <ReportTile
+                                            type={1}
+                                            report={e}
+                                            setReport={setreports}
+                                            key={e._id}
+                                        />
+                                    })
+                                }
+                            </AdminCard>
 
-                        <AdminCard className={styles.donation} title="Donations">
-                            {
-                                donations.length===0&&!isLoading? <span>No Donation Found</span>:
-                                <>
-                                    <hr/>
-                                    {
-                                        donations.map((e)=>{
-                                            return <DonationTile
-                                                donation={e}
-                                                setDonation={setdonations}
-                                                type={1}
-                                                key={e._id}
-                                            />
-                                        })
-                                    }
-                                </>
-                            }
+                            <AdminCard className={styles.donation} title="Donations">
+                                {
+                                    donations.length===0&&!isLoading? <span>No Donation Found</span>:
+                                    <>
+                                        <hr/>
+                                        {
+                                            donations.map((e)=>{
+                                                return <DonationTile
+                                                    donation={e}
+                                                    setDonation={setdonations}
+                                                    type={1}
+                                                    key={e._id}
+                                                />
+                                            })
+                                        }
+                                    </>
+                                }
+                            </AdminCard>
+                        </div>
+                        <AdminCard title="Crime Report">
+                            <CrimeReport 
+                                crimes={crimes}
+                                setCrimes={setcrimes}
+                                isBeingLoad={isLoading}
+                            />
                         </AdminCard>
                     </div>
-                    <AdminCard title="Crime Report">
-                        <CrimeReport 
-                            crimes={crimes}
-                            setCrimes={setcrimes}
-                            isBeingLoad={isLoading}
-                        />
-                    </AdminCard>
                 </div>
-            </div>
-
+            }
+            
             <Portal node={document && document.getElementById('loader')}>
                 { 
                     isLoading&&<div className="loader-context dark">
