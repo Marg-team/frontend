@@ -78,12 +78,14 @@ export default function CrimeReport({crimes, setCrimes, isBeingLoad}) {
         }
     }
 
+
     return (
         <Table hover className={`${styles.table}`}>
             <thead>
                 <tr>
                     <th>DETAILS</th>
                     <th>ADDRESS</th>
+                    <th>PROOF</th>
                     <th>STATUS</th>
                 </tr>
             </thead>
@@ -97,6 +99,13 @@ export default function CrimeReport({crimes, setCrimes, isBeingLoad}) {
                             </td>
                             <td>
                                 {e.address}
+                            </td>
+                            <td>
+                            {
+                                e.proof?
+                                <a target="_blank" href={`//localhost:8000/${e.proof}`} rel="noreferrer">{e.proof}</a>:
+                                "not available"
+                            }
                             </td>
                             <td>
                                 
