@@ -54,9 +54,10 @@ svg.down{
 .inner form{
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .inner button{
     margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
 }
