@@ -32,14 +32,14 @@ export default function Signup() {
         e.preventDefault();
 
         const formRef = type===0?formRefVolunteer: formRefNgo;
-
-        const name = formRef.current[0].value;
-        const email = formRef.current[1].value;
-        const phone = formRef.current[2].value;
-        const password = formRef.current[3].value;
-        const confirm = formRef.current[4].value;
-        const panOrReg = formRef.current[5].value;
-        const reasonOrAddr = formRef.current[6].value;
+        const ngoName = formRef.current[0].value;
+        const name = formRef.current[type===0?0:1].value;
+        const email = formRef.current[type===0?1:2].value;
+        const phone = formRef.current[type===0?2:3].value;
+        const password = formRef.current[type===0?3:4].value;
+        const confirm = formRef.current[type===0?4:5].value;
+        const panOrReg = formRef.current[type===0?5:6].value;
+        const reasonOrAddr = formRef.current[type===0?6:7].value;
 
         if(password!==confirm){
             toast.error('password and confirm password doesn\'t match');
@@ -66,15 +66,15 @@ export default function Signup() {
                     pan: panOrReg,
                     reason: reasonOrAddr
                 }:{
-                   
                     header: headers,
+                    ngo: ngoName,
                     email: email,
                     password: password,
                     name: name,
                     phone: phone,
                     reg: panOrReg,
                     address: reasonOrAddr 
-                }
+                },
             )
             console.log(response);
 
@@ -130,6 +130,7 @@ export default function Signup() {
                         <Tab eventKey="ngo" title="NGO">
                             <h2>NGO</h2>
                             <form ref={formRefNgo} onSubmit={submitFormNgo}>
+                                <input type="text" id="ngo" placeholder="NGO Name" required/>
                                 <input type="text" id="email" placeholder="Full Name" required/>
                                 <input type="text" id="password" placeholder="Email" required/>
                                 <input type="text" id="password" placeholder="Phone No." required/>
