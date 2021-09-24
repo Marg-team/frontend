@@ -1,19 +1,24 @@
 import React from 'react'
 import { Col, Row, Card } from 'react-bootstrap';
 import * as styles from './Donation.module.css';
-import boat from '../../../../assets/images/1boat.jpg'
+import clothes from '../../../../assets/images/clothes.png'
+import foods from '../../../../assets/images/vegetables.png'
+import medicines from '../../../../assets/images/medicine.png'
 
 export default function Donation() {
     const donation = [
         {
+            img: clothes,
             qty: 35,
             type: "Clothes"
         },
         {
+            img: foods,
             qty: 46,
             type: "Food"
         },
         {
+            img: medicines,
             qty: 64,
             type: "Medicine"
         },
@@ -39,10 +44,10 @@ export default function Donation() {
                         <div className="line"></div>
                         <Row>
                             {   
-                                donation.map((e)=>{
+                                donation.map((e, i)=>{
                                     return <Col lg={4} md={4} sm={6} xs={6} key={e.type}>
                                         <Card className={styles.donated_card}>
-                                            <Card.Img src={boat}/>
+                                            <Card.Img src={e.img} style={{paddingLeft: 50, paddingRight: 50, objectFit: 'contain', transform: i===2?'translateY(18px)':'unset'}}/>
                                             <Card.Text as="span">
                                                 <hr/>
                                                 <p className={styles.num_donated_sub}>{e.qty} {e.type}</p>
