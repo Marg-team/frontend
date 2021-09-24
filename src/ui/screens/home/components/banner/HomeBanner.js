@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import { useHistory } from 'react-router'
-import logo from '../../../../assets/images/happy.png' 
+import logo from '../../../../assets/images/HP.png' 
 import LightButton from '../../../../components/Button/LightButton/LightButton'
 import * as styles from './HomeBanner.module.css'
 
@@ -20,7 +20,7 @@ export default function HomeBanner() {
                         <p>Come join and help us to help people in need connect with the world and make their lives jubilant</p>
                         <LightButton onClick={buttonClickHandler}>GET STARTED</LightButton>
                     </Col>
-                    <Col className={`${styles.banner_img} d-none d-md-block`}>
+                    <Col className={`${styles.banner_img} d-none d-md-block`} style={{transform: 'translateY(-20px)'}}>
                         <img src={logo} width='100%' alt='banner'/>
                     </Col>
                 </Row>
