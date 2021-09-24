@@ -54,7 +54,8 @@ export default function Complain() {
                 header: headers,
                 situation: situation,
                 address: address,
-                proof: file
+                proof: file,
+                filename: fileName
             }
         )
         setisLoading(false);

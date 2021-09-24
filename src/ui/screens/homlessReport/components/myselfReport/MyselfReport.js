@@ -51,7 +51,8 @@ export default function MyselfReport() {
                 contact: contact,
                 address: address,
                 desc: desc,
-                proof: file
+                proof: file,
+                filename: fileName
             }
         )
         setisLoading(false);
