@@ -17,12 +17,12 @@ export default function Feedback() {
                     <p>Kindly fill in your Feedback here</p>
 
                     <div className={styles.inner}>
-                        <form className="" action="" method="post">
+                        <form className="" action="https://getform.io/f/3df5279b-2578-42a9-8440-b2970a46106d" method="post">
                             <div className="form-group boxes">
-                                <input className="form-control height " type="text" name="postTitle" placeholder="Email"/>
-                                <textarea className="form-control widths" name="postBody" rows="8" cols="30" placeholder="Type here"></textarea>
+                                <input className="form-control height " type="text" name="email" placeholder="Email" required/>
+                                <textarea className="form-control widths" name="message" rows="8" cols="30" placeholder="Type here" required></textarea>
                             </div>
-                            <GreButton>SEND</GreButton>
+                            <GreButton type='submit'>SEND</GreButton>
                         </form>
                     </div>
                 </div>

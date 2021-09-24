@@ -1,8 +1,8 @@
 import React from 'react'
 import * as styles from './GreButton.module.css'
 
-export default function GreButton({children, onClick}) {
+export default function GreButton({children, onClick, type='button'}) {
     return (
-        <button type="button" onClick={onClick} className={styles.login_button_gre}>{children}</button>
+        <button type={type} onClick={onClick} className={styles.login_button_gre}>{children}</button>
     )
 }
