@@ -89,6 +89,12 @@ export default function DonationTile({donation, setDonation, type}) {
                 <h4>{donation.name}</h4>
                 <span>{donation.phone}</span>
                 <span>{donation.address}</span>
+                <span>
+                    {donation.donation_clothes!==0&&`${donation.donation_clothes} Clothes `}
+                    {donation.donation_food!==0&&`${donation.donation_food} Foods `}
+                    {donation.donation_medicine!==0&&`${donation.donation_medicine} Medicines `}
+                </span>
+                <span>{donation.desc}</span>
             </div>
             {
                 type!==3&&
