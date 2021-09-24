@@ -103,6 +103,14 @@ export default function ReportTile({type=0, report, setReport}) {
                     <span>About:</span>
                     <span>{report.desc??"Unknown"}</span>
                 </div>
+
+                {
+                    report.proof&&
+                    <div className={styles.items}>
+                        <span>Proof:</span>
+                        <span><a target="_blank" href={`//localhost:8000/${report.proof}`} rel="noreferrer">{report.proof}</a></span>
+                    </div>
+                }
             </div>
             {
                 type!==3&&<div className={styles.buttons}>
