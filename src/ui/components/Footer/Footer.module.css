@@ -27,6 +27,11 @@
     font-size: 14px;
 }
 
+.footer a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
 .para{
     width: 67%;
 }
