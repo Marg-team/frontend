@@ -17,7 +17,7 @@ export default function AdminSidebar({ngo_q=0, donation_q=0, report_q=0}) {
                 <span>Welcome to AASHROY</span>
                 <p>
                     <br/>
-                    TIME: <Clock format={'hh:mm:ss A'} ticking={true} timezone={'GMT+5:30'} />
+                    TIME: <Clock format={'hh:mm:ss A'} ticking={true} />
                     <br/>
                     VERSION: 1.0
                     <br/>
