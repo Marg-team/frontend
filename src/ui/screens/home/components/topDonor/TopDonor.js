@@ -2,13 +2,14 @@ import React from 'react'
 import { Container, Row, Col, Card } from 'react-bootstrap'
 import * as styles from './TopDonor.module.css'
 import user from '../../../../assets/images/user.svg'
-// import { useHistory } from 'react-router';
+import { useHistory } from 'react-router';
+import Button from '../../../../components/Button/GreButton/GreButton'
 
 export default function TopDonor() {
-    // const history = useHistory();
-    // const buttonClickHandler = () => {
-    //     history.push('/public-data/')
-    // }
+    const history = useHistory();
+    const buttonClickHandler = () => {
+        history.push('/donate/')
+    }
     const topDonor = [
         {   
             img: 'https://www.fakepersongenerator.com/Face/male/male20171084077370789.jpg',
@@ -53,6 +54,9 @@ export default function TopDonor() {
                         }
                     </Row>
                 </Container>
+                <div>
+                    <Button onClick={buttonClickHandler}>Donate</Button>
+                </div>
             </div>
         </section>
     )
