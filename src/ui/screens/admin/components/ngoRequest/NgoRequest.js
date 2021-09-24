@@ -84,7 +84,7 @@ export default function NgoRequest({ngoRequests, setNgoRequest}) {
                 {
                 ngoRequests.length!==0&&<tr>
                     <th>NGO NAME</th>
-                    <th>PHONE NO.</th>
+                    <th>OWNER NAME</th>
                     <th>REGISTRATION ID</th>
                     <th>ADDRESS</th>
                     <th>STATUS</th>
@@ -97,10 +97,10 @@ export default function NgoRequest({ngoRequests, setNgoRequest}) {
                     :ngoRequests.map((e, i)=>{
                         return <tr key={i}>
                             <td>
-                                <span>{e.name}</span>
-                                <p>{e.email}</p>
+                                <span>{e.ngo}</span>
+                                <p>{e.email}<br/>{e.phone}</p>
                             </td>
-                            <td>{e.phone}</td>
+                            <td>{e.name}</td>
                             <td>{e.reg}</td>
                             <td>{e.address}</td>
                             <td>
