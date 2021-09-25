@@ -1,0 +1,123 @@
+.about {
+    margin-top: 9rem;
+
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+}
+
+.heading h2 {
+    font-weight: 100;
+    font-size: 60px;
+    color: #000000;
+}
+
+.heading p {
+    width: 60%;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.left {
+    width: 60%;
+    margin-bottom: 4rem;
+}
+
+.left h2, .right h2{
+    margin-bottom: 2rem;
+}
+
+.right {
+    width: 60%;
+    text-align: right;
+    margin-left: auto;
+    margin-bottom: 4rem;
+}
+
+.about hr {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.heading img {
+    width: 100vw;
+    position: absolute;
+    z-index: -1;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 870px){
+    .heading {
+        height: unset !important;
+    }
+}
+
+@media screen and (max-width: 1070px){
+    .heading {
+        height: 55vh;
+    }
+}
+
+@media screen and (max-width: 830px){
+    .heading img {
+        filter: blur(1px) opacity(0.5);
+    }
+}
+
+@media screen and (max-width: 630px){
+    .heading img {
+        filter:opacity(0);
+    }
+}
+
+.member_card img{
+    border-radius: 100%;
+    width: 70% !important;
+    background-color: white;
+}
+
+.member_card{
+    border: unset !important;
+    background-color: unset !important;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.member_card p{
+    text-align: center;
+}
+
+.member_card h4{
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.readmore_btn{
+    width: 100%;
+    border-radius: 30px;
+    background-color: blue;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    height: 2.5rem;
+}
+
+.member {
+    margin-bottom: rem;
+}
+
+

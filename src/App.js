@@ -4,6 +4,7 @@ import './App.css';
 import Footer from './ui/components/Footer/Footer';
 import Navigation from './ui/components/Navbar/Navbar';
 import Page404 from './ui/screens/404/404';
+import About from './ui/screens/about/About';
 import Admin from './ui/screens/admin/Admin';
 import Complain from './ui/screens/complain/Complain';
 import Donate from './ui/screens/donate/Donate';
@@ -28,6 +29,9 @@ function App() {
         <Suspense>
           <Navigation/>
           <Switch>
+            <Route path="/about">
+              <About/>
+            </Route>
             <Route path="/report">
               <HomelessReport/>
             </Route>
